@@ -52,7 +52,8 @@
 
 })(jQuery);
 
-var twittervcardback = function(data){
+function twittervcardback(data){
+	console.log(data['screen_name']);
 	console.log(data);
 	var wrapper = document.createElement('blockquote');
 	$(wrapper).addClass('twt-tweet');
@@ -97,15 +98,17 @@ var twittervcardback = function(data){
 			//  <time class="timeago" tal:attributes="datetime tweet/status/created_at_datetime" tal:content="tweet/status/created_at"></time>
 			//</a>
 			var anchor = document.createElement('a');
-			$(anchor).attr('href', "https://twitter.com/" + data['screen_name'] + '/status/' + data['status']['id']);
+			$(anchor).attr('href', "https://twitter.com/" + data['screen_name'] + '/status/' + data['status']['id_str']);
 			var timeago = document.createElement('time')
-			$(timeago).addClass('timeago').attr('datetime', ''); //FIXME
-			$(timeago).text(data['status']['created_at']);
+			var dt = new Date(Date.parse(data['status']['created_at']));
+			var datetimestr = '' + dt.getFullYear() + '-' + ("0" + (dt.getMonth() + 1)).slice(-2) + '-' + dt.getDate() + 'T' + dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds() + 'Z'
+			$(timeago).addClass('timeago').attr('datetime', datetimestr).text(data['status']['created_at']);
 			anchor.appendChild(timeago);
 			wrapper.appendChild(anchor);
-	}
-	else{
-		console.log(data['screen_name']);
+			//Add timeago support
+			if(jQuery().timeago) {
+				$(timeago).timeago();
+			}
 	}
 
 	var selector = 'a.twittervcard[href$="'+data['screen_name']+'"]';

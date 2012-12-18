@@ -1,27 +1,30 @@
 <html>
 <head>
 <title>Twitter VCard jquery plugin</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="jquery.tmpl.js"></script>
-<script src="jquery.twittervcard.js"></script>
+<link type="text/css" href="https://raw.github.com/starfishmod/jquery-oembed-all/master/jquery.oembed.js" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/starfishmod/jquery-oembed-all/master/jquery.oembed.js"></script>
+<script type="text/javascript" src="https://raw.github.com/rmm5t/jquery-timeago/master/jquery.timeago.js"></script>
+<script type="text/javascript" src="jquery.twittervcard.js"></script>
 </head>
 <body>
 
-
-<a class="twittervcard" href="https://twitter.com/RogierNoort"></a>
-<a class="twittervcard" href="https://twitter.com/wautersvince"></a>
-<a class="twittervcard" href="https://twitter.com/filiplannoye"></a>
-<a class="twittervcard" href="https://twitter.com/IsaGhislain"></a>
-<a class="twittervcard" href="https://twitter.com/francoislambert"></a>
-<a class="twittervcard" href="https://twitter.com/fdumortierd"></a>
-<a class="twittervcard" href="https://twitter.com/fred_lodico"></a>
-<a class="twittervcard" href="https://twitter.com/eauquiere"></a>
-<a class="twittervcard" href="https://twitter.com/tonydecoux"></a>
+<a class="oembed" href="https://twitter.com/RogierNoort/status/280983703038091264">oembed REFERENCE</a>
+<a class="twittervcard" href="https://twitter.com/RogierNoort">@RogierNoort</a>
+<a class="twittervcard" href="https://twitter.com/wautersvince">@wautersvince</a>
+<a class="twittervcard" href="https://twitter.com/filiplannoye">@filiplannoye</a>
+<a class="twittervcard" href="https://twitter.com/IsaGhislain">@IsaGhislain</a>
+<a class="twittervcard" href="https://twitter.com/francoislambert">@francoislambert</a>
+<a class="twittervcard" href="https://twitter.com/fdumortierd">@fdumortierd</a>
+<a class="twittervcard" href="https://twitter.com/fred_lodico">@fred_lodico</a>
+<a class="twittervcard" href="https://twitter.com/eauquiere">@eauquiere</a>
+<a class="twittervcard" href="https://twitter.com/tonydecoux">@tonydecoux</a>
 
 
 <script type="text/javascript">
 $(document).ready(function() {
     $('.twittervcard').twittervcard();
+    $('.oembed').oembed();
 });
 </script>
 </body>
